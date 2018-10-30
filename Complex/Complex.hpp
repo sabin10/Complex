@@ -4,6 +4,7 @@
 #include <string>
 #include <math.h>
 #include <sstream>
+#include <stdexcept>
 
 
 class Complex {
@@ -12,20 +13,26 @@ public:
 	Complex(std::string s);
 	Complex(const Complex &z);
 
+	void setReal(double pReal);
+	double getReal() const;
+
+	void setImg(double pImg);
+	double getImg() const;
+
 	void operator= (const Complex &z);
 	void operator= (const double pReal);
 
-	void operator+= (const Complex &z);
-	void operator+= (const double pReal);
+	Complex operator+= (const Complex &z);
+	Complex operator+= (const double pReal);
 
-	void operator-= (const Complex &z);
-	void operator-= (const double pReal);
+	Complex operator-= (const Complex &z);
+	Complex operator-= (const double pReal);
 
-	void operator*= (const Complex &z);
-	void operator*= (const double pReal);
+	Complex operator*= (const Complex &z);
+	Complex operator*= (const double pReal);
 
-	void operator/= (const Complex &z);
-	void operator/= (const double pReal);
+	Complex operator/= (const Complex &z);
+	Complex operator/= (const double pReal);
 
 	friend Complex operator+ (const Complex &z);
 	friend Complex operator- (const Complex &z);
@@ -68,12 +75,6 @@ public:
 	friend double getModule(const Complex &z);
 
 	friend Complex getSquareRoot(const Complex &z, unsigned short int k); // k = 0 or 1
-
-	void setReal(double pReal);
-	double getReal() const;
-
-	void setImg(double pImg);
-	double getImg() const;
 
 private:
 	double mReal;
