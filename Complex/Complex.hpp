@@ -20,7 +20,7 @@ public:
 	double getImg() const;
 
 	//void operator= (const Complex &z); //multiple assignments doesnt work
-	Complex & operator= (const Complex &z) //multiple assignments work ex: obj1 = obj2 = obj3;
+	Complex & operator= (const Complex &z); //multiple assignments work ex: obj1 = obj2 = obj3;
 	void operator= (const double pReal);
 
 	Complex operator+= (const Complex &z);
